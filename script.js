@@ -1,17 +1,26 @@
+const getUsers = () => {
+    let arr = []
+    document.querySelectorAll("._aacl._aaco._aacw._aacx._aad7._aade").forEach(ele => {
+        following.push(ele.innerText)
+    })
+    
+    return arr
+}
+
+
 const getWasteFollowing = (following, followers) => {
     let wasteFollowing = []
     following.forEach(follow => {
         
-        let isAlsoFollower = false
+        let isAFollower = false
         
         followers.forEach(follower => {
             if (follow == follower) {
-                isAlsoFollower  = true
-                
+                isAFollower  = true 
             }
         })
 
-        if (!isAlsoFollower) {
+        if (!isAFollower) {
 
             wasteFollowing.push(follow)
         }
@@ -21,3 +30,14 @@ const getWasteFollowing = (following, followers) => {
     return wasteFollowing
     
 }
+
+///////////////////////
+
+let followers = getUsers()
+
+let following = getUsers()
+
+
+getWasteFollowing(following, followers)
+
+
