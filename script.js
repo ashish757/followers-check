@@ -1,7 +1,7 @@
 const getUsers = () => {
     let arr = []
     document.querySelectorAll("._aacl._aaco._aacw._aacx._aad7._aade").forEach(ele => {
-        following.push(ele.innerText)
+        arr.push(ele.innerText)
     })
     
     return arr
